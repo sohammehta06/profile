@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soham Mehta</title>
+    <title>Soham Mehta - Builder. Founder. Operator.</title>
     <style>
         * {
             margin: 0;
@@ -13,106 +13,154 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', system-ui, sans-serif;
-            background: #000;
+            background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
             color: #fff;
             line-height: 1.6;
-            padding: 40px 20px;
+            padding: 0;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 60px 40px;
         }
 
+        /* HEADER WITH PUNCH */
         .header {
-            margin-bottom: 60px;
+            margin-bottom: 80px;
             border-bottom: 1px solid #333;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
+            position: relative;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background: #00ff88;
         }
 
         .name {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 12px;
+            font-size: 64px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #00ff88 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .tagline {
-            font-size: 20px;
-            color: #888;
-            font-weight: 400;
-            margin-bottom: 24px;
+            font-size: 24px;
+            color: #00ff88;
+            font-weight: 600;
+            margin-bottom: 30px;
+            line-height: 1.4;
         }
 
         .contact {
             display: flex;
-            gap: 24px;
+            gap: 30px;
             flex-wrap: wrap;
-            font-size: 14px;
-            color: #666;
+            font-size: 15px;
+            color: #888;
         }
 
         .contact a {
-            color: #666;
+            color: #888;
             text-decoration: none;
-            transition: color 0.2s;
+            transition: all 0.2s;
+            border: 1px solid #333;
+            padding: 8px 16px;
+            border-radius: 6px;
         }
 
         .contact a:hover {
-            color: #fff;
+            color: #00ff88;
+            border-color: #00ff88;
+            transform: translateY(-2px);
         }
 
+        /* PUNCHY STATS */
         .section {
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .section-title {
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #666;
-            margin-bottom: 24px;
-            font-weight: 600;
+            letter-spacing: 3px;
+            color: #00ff88;
+            margin-bottom: 30px;
+            font-weight: 700;
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            background: linear-gradient(135deg, #111 0%, #000 100%);
             border: 1px solid #222;
-            border-radius: 8px;
-            padding: 32px;
-            margin-bottom: 32px;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
         }
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
         .stat {
-            padding: 20px;
-            background: #0a0a0a;
-            border-radius: 6px;
-            border: 1px solid #1a1a1a;
+            padding: 30px;
+            background: linear-gradient(135deg, #000 0%, #111 100%);
+            border: 1px solid #333;
+            border-radius: 10px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #00ff88;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            border-color: #00ff88;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
         }
 
         .stat-number {
-            font-size: 32px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 4px;
+            font-size: 42px;
+            font-weight: 800;
+            color: #00ff88;
+            margin-bottom: 8px;
+            line-height: 1;
         }
 
         .stat-label {
-            font-size: 13px;
-            color: #666;
+            font-size: 14px;
+            color: #888;
+            font-weight: 500;
         }
 
+        /* EXPERIENCE WITH BITE */
         .experience-item {
-            margin-bottom: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #1a1a1a;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #222;
+            position: relative;
         }
 
         .experience-item:last-child {
@@ -122,31 +170,49 @@
         }
 
         .exp-header {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .exp-title {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 700;
             margin-bottom: 4px;
+            color: #fff;
         }
 
         .exp-company {
-            font-size: 16px;
-            color: #888;
+            font-size: 18px;
+            color: #00ff88;
             margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .exp-company a {
+            color: #00ff88;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .exp-company a:hover {
+            border-bottom: 1px solid #00ff88;
         }
 
         .exp-meta {
-            font-size: 13px;
-            color: #555;
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
         }
 
         .exp-description {
-            font-size: 15px;
+            font-size: 16px;
             color: #aaa;
-            margin-bottom: 16px;
-            font-weight: 500;
+            margin-bottom: 20px;
+            font-weight: 600;
+            background: #111;
+            padding: 16px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #00ff88;
         }
 
         .achievements {
@@ -154,46 +220,132 @@
         }
 
         .achievements li {
-            padding-left: 20px;
-            margin-bottom: 12px;
+            padding-left: 24px;
+            margin-bottom: 16px;
             position: relative;
-            font-size: 14px;
-            color: #999;
-            line-height: 1.6;
+            font-size: 15px;
+            color: #ccc;
+            line-height: 1.7;
         }
 
         .achievements li:before {
-            content: "→";
+            content: "⚡";
             position: absolute;
             left: 0;
-            color: #444;
+            color: #00ff88;
+            font-weight: bold;
         }
 
         .achievements strong {
             color: #fff;
-            font-weight: 600;
+            font-weight: 700;
         }
 
+        /* FOUNDER ENERGY QUOTE */
         .quote {
-            font-size: 18px;
-            font-style: italic;
-            color: #666;
+            font-size: 20px;
+            color: #00ff88;
             text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid #1a1a1a;
-            margin-top: 60px;
+            padding: 60px 0;
+            border-top: 1px solid #222;
+            margin-top: 80px;
+            font-weight: 600;
+            font-style: normal;
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            border-radius: 12px;
+            margin: 80px 0;
+        }
+
+        /* CALL TO ACTION - FOUNDER ENERGY */
+        .cta-section {
+            background: linear-gradient(135deg, #000 0%, #111 100%);
+            border: 2px solid #00ff88;
+            border-radius: 16px;
+            padding: 60px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .cta-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #00ff88;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #00ff88;
+            color: #000;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: 2px solid #00ff88;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #00ff88;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        /* BADGES */
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+            justify-content: center;
         }
 
         .badge {
             display: inline-block;
-            padding: 4px 12px;
-            background: #1a1a1a;
+            padding: 8px 16px;
+            background: #111;
             border: 1px solid #333;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 12px;
-            color: #888;
-            margin-right: 8px;
-            margin-bottom: 8px;
+            color: #00ff88;
+            font-weight: 600;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .name {
+                font-size: 48px;
+            }
+            
+            .tagline {
+                font-size: 20px;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .cta-section {
+                padding: 40px 20px;
+            }
         }
 
         @media print {
@@ -215,10 +367,6 @@
                 background: #fafafa;
                 border-color: #eee;
             }
-            
-            .achievements li:before {
-                color: #999;
-            }
         }
     </style>
 </head>
@@ -226,92 +374,100 @@
     <div class="container">
         <div class="header">
             <h1 class="name">Soham Mehta</h1>
-            <p class="tagline">Built & scaled 2 startups before 20. ₹2Mn revenue in 4 months, profitable from Day 1.</p>
+            <p class="tagline">Built ₹2Mn revenue in 4 months. Profitable from Day 1. Now building the next billion-dollar company.</p>
             <div class="contact">
-                <span>sohammehta.e@gmail.com</span>
-                <span>+91 9343584820</span>
-                <a href="https://linkedin.com/in/sohamehta">linkedin.com/in/sohamehta</a>
-                <span>Hyderabad, India</span>
+                <a href="mailto:sohammehta.e@gmail.com">sohammehta.e@gmail.com</a>
+                <a href="tel:+919343584820">+91 9343584820</a>
+                <a href="https://linkedin.com/in/sohamehta" target="_blank">LinkedIn</a>
+                <a href="https://www.truva.in" target="_blank">Truva</a>
+                <a href="https://www.goswift.in/" target="_blank">Swift</a>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Track Record</h2>
+            <h2 class="section-title">The Numbers Don't Lie</h2>
             <div class="highlight-box">
                 <div class="stats">
                     <div class="stat">
                         <div class="stat-number">₹2Mn</div>
-                        <div class="stat-label">Revenue in 4 months (Aphrelle)</div>
+                        <div class="stat-label">Revenue in 4 months</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">₹450Cr</div>
-                        <div class="stat-label">Pipeline built (Week 1, Truva)</div>
+                        <div class="stat-label">Pipeline built (Week 1)</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">VCs pitched</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">3Mn+</div>
-                        <div class="stat-label">Organic impressions driven</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">20+</div>
-                        <div class="stat-label">VCs pitched (multiple term sheets)</div>
+                        <div class="stat-label">Organic impressions</div>
                     </div>
                 </div>
-                <p style="color: #888; font-size: 14px;">
-                    2x founder (BITS Pilani). Razorpay Rize Top 15 (Peak XV & Lightspeed backed). ICE 2025 finalist (only Indian team in Top 20). WTFund Top 13% (Nikhil Kamath). Cross-functional operator: healthtech, e-com, D2C, proptech, B2B SaaS.
+                <p style="color: #888; font-size: 16px; line-height: 1.6;">
+                    2x founder who actually ships. Razorpay Rize Top 15. ICE 2025 finalist (only Indian team). WTFund Top 13%. 
+                    Cross-functional operator across healthtech, e-com, D2C, proptech, B2B SaaS. I don't just talk about building - I build.
                 </p>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">What I've Built</h2>
+            <h2 class="section-title">What I've Built & Scaled</h2>
             
             <div class="experience-item">
                 <div class="exp-header">
                     <div class="exp-title">Founder & CEO, Aphrelle</div>
-                    <div class="exp-company">BITS Pilani's fastest-scaling student startup</div>
+                    <div class="exp-company">
+                        <a href="https://www.linkedin.com/company/aphrelle" target="_blank">BITS Pilani's fastest-scaling student startup</a>
+                    </div>
                     <div class="exp-meta">Apr 2024 – Present</div>
                 </div>
                 <p class="exp-description">₹2Mn+ revenue in 4 months, bootstrapped & profitable from Day 1</p>
                 <ul class="achievements">
-                    <li><strong>Day 1 profitability</strong> — negotiated supplier deals at 38-42% margins, zero external capital. Received pre-seed offers at ₹50-100Cr valuation</li>
-                    <li><strong>Scaled 10-person team</strong> (ops, growth, tech) across 3 cities while full-time in college. Built SOPs for order fulfillment, inventory, campus distribution</li>
-                    <li><strong>Dominated national competitions</strong> — SEEP (BITS), Blueprint (IIT Delhi - Top 3/10,000+), Empresario (IIT KGP), Techfest (IIT Bombay)</li>
-                    <li><strong>Pivoted to tech-first marketplace</strong> after 200+ customer interviews. Rebuilt product model in 6 weeks</li>
-                    <li><strong>Built influencer engine</strong> — 3Mn+ organic LinkedIn impressions, 40% revenue from word-of-mouth</li>
-                    <li><strong>Pitched 20+ top VCs</strong> — closed offers from angels & institutions (Kalaari, Peak XV, Antler pipelines)</li>
-                    <li><strong>UP Government recognition</strong> — Startup India certified, DPIIT registered, ₹7.5L+ grants secured</li>
+                    <li><strong>Built a money-making machine</strong> — 38-42% margins, zero external capital, pre-seed offers at ₹50-100Cr valuation</li>
+                    <li><strong>Scaled 10-person distributed team</strong> across 3 cities while full-time in college. Built ops, inventory, distribution from scratch</li>
+                    <li><strong>Dominated every competition we entered</strong> — SEEP (BITS), Blueprint (IIT Delhi - Top 3/10,000+), Empresario (IIT KGP), Techfest (IIT Bombay)</li>
+                    <li><strong>Pivoted based on data, not feelings</strong> — 200+ customer interviews → rebuilt as tech-first marketplace in 6 weeks</li>
+                    <li><strong>Engineered viral growth</strong> — 3Mn+ organic LinkedIn impressions, 40% revenue from word-of-mouth</li>
+                    <li><strong>Raised from top VCs</strong> — pitched 20+ funds, closed offers from angels & institutions (Kalaari, Peak XV, Antler)</li>
+                    <li><strong>Government-recognized</strong> — Startup India certified, DPIIT registered, ₹7.5L+ grants secured</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="exp-header">
                     <div class="exp-title">Acquisitions, Truva</div>
-                    <div class="exp-company">Proptech (Stellaris-backed, $7M Series A)</div>
+                    <div class="exp-company">
+                        <a href="https://www.truva.in" target="_blank">Proptech (Stellaris-backed, $7M Series A)</a>
+                    </div>
                     <div class="exp-meta">Jul 2025 – Present</div>
                 </div>
-                <p class="exp-description">Handling key launches & high-ticket deal closures</p>
+                <p class="exp-description">Handling key launches & closing high-ticket deals</p>
                 <ul class="achievements">
-                    <li><strong>₹450Cr pipeline in Week 1</strong> — sourced & qualified 15 deals (₹20-80Cr tickets each)</li>
-                    <li><strong>Closed largest client</strong> — Bennett Coleman & Co. ($1.3Bn revenue, Top 10 secondary real estate in India). Cold outreach to signed LOI in 3 weeks</li>
-                    <li><strong>Built HNI trust frameworks</strong> — pitch decks, financial models, market comps for ₹20-80Cr asset sales</li>
-                    <li><strong>Leading Truva Select Program</strong> — exclusive HNI community launch + premium segment growth strategy</li>
-                    <li><strong>Core strategic projects</strong> — working directly with COO & CEO on marketplace liquidity, seller acquisition playbooks</li>
+                    <li><strong>Built ₹450Cr pipeline in Week 1</strong> — sourced & qualified 15 deals (₹20-80Cr tickets each)</li>
+                    <li><strong>Closed largest client</strong> — Bennett Coleman & Co. ($1.3Bn revenue). Cold outreach to signed LOI in 3 weeks</li>
+                    <li><strong>Built trust frameworks for HNIs</strong> — pitch decks, financial models, market comps for ₹20-80Cr asset sales</li>
+                    <li><strong>Leading Truva Select Program</strong> — exclusive HNI community launch + premium segment growth</li>
+                    <li><strong>Working directly with COO & CEO</strong> on marketplace liquidity, seller acquisition playbooks</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="exp-header">
                     <div class="exp-title">Founder's Office, Swift</div>
-                    <div class="exp-company">E-com Infra (Kalaari-backed, $2.2M Pre-Series A)</div>
+                    <div class="exp-company">
+                        <a href="https://www.goswift.in/" target="_blank">E-com Infra (Kalaari-backed, $2.2M Pre-Series A)</a>
+                    </div>
                     <div class="exp-meta">May 2025 – Jul 2025</div>
                 </div>
                 <p class="exp-description">Series A e-commerce platform (logistics, checkout, payments, analytics)</p>
                 <ul class="achievements">
-                    <li><strong>Identified 3 critical bottlenecks</strong> — customer success handoffs, ticket aging, zero courier visibility for KAMs</li>
+                    <li><strong>Killed 3 critical bottlenecks</strong> — customer success handoffs, ticket aging, zero courier visibility</li>
                     <li><strong>Built ticket triage framework</strong> — escalation aging + seller sentiment scoring for high-risk flagging</li>
-                    <li><strong>Tech collaboration on ML pilots</strong> — sentiment analysis model for auto-flagging at-risk sellers pre-churn</li>
+                    <li><strong>Tech collaboration on ML pilots</strong> — sentiment analysis for auto-flagging at-risk sellers pre-churn</li>
                     <li><strong>Real-time workflows</strong> — Slack alerts for KAMs on courier delays, stuck orders, payment disputes</li>
-                    <li><strong>LinkedIn brand strategy</strong> — 350% visibility increase, 280% higher engagement vs competitors. Set brand voice across all channels</li>
+                    <li><strong>LinkedIn brand strategy</strong> — 350% visibility increase, 280% higher engagement vs competitors</li>
                 </ul>
             </div>
 
@@ -322,8 +478,8 @@
                     <div class="exp-meta">Aug 2024 – Mar 2025</div>
                 </div>
                 <ul class="achievements">
-                    <li><strong>Product-ready in 6 months</strong> — raised ₹1Cr+ in govt & institutional grants (BIRAC, Startup India)</li>
-                    <li><strong>GTM & business model</strong> — secured ₹25L+ B2B pre-orders before MVP (hospitals, eldercare facilities)</li>
+                    <li><strong>Product-ready in 6 months</strong> — raised ₹1Cr+ in grants (BIRAC, Startup India)</li>
+                    <li><strong>GTM & business model</strong> — secured ₹25L+ B2B pre-orders before MVP</li>
                     <li><strong>Full-stack operator</strong> — handled biz model, GTM, ops, fundraising, vendor negotiations, regulatory research</li>
                 </ul>
             </div>
@@ -335,28 +491,47 @@
                 </div>
                 <ul class="achievements">
                     <li>Secured ₹5L institutional support, pre-incubated at BITS Pilani</li>
-                    <li>Built early product, pivoted after co-founder exit. Key learning: speed matters, but founder-market fit matters more</li>
+                    <li>Built early product, pivoted after co-founder exit. <strong>Key learning: speed matters, but founder-market fit matters more</strong></li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Background</h2>
+            <h2 class="section-title">Where It Started</h2>
             <div class="exp-header">
-                <div class="exp-title">BITS Pilani Hyderabad Campus</div>
+                <div class="exp-title">
+                    <a href="https://www.bits-pilani.ac.in/" target="_blank" style="color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;" onmouseover="this.style.borderBottom='1px solid #00ff88'" onmouseout="this.style.borderBottom='1px solid transparent'">BITS Pilani Hyderabad Campus</a>
+                </div>
                 <div class="exp-company">Electrical & Electronics Engineering</div>
                 <div class="exp-meta">Aug 2023 – Mar 2026 (Early graduation: 3 years instead of 4)</div>
             </div>
             <ul class="achievements">
                 <li><strong>Only 1st-year to close national TV sponsors</strong> (Dept. of Sponsorship & Marketing)</li>
                 <li><strong>Wall Street Club</strong> — solo generated ₹50K+ revenue in 1 day during fest</li>
-                <li><strong>Youngest team leader (19)</strong> — leading BITS Pilani to Smart India Hackathon 2025 Finals (world's largest open innovation model)</li>
+                <li><strong>Youngest team leader (19)</strong> — leading BITS Pilani to Smart India Hackathon 2025 Finals</li>
                 <li>E-Cell member before scaling Aphrelle full-time</li>
             </ul>
         </div>
 
         <div class="quote">
-            "Most people optimize for credentials. I optimize for speed and impact."
+            "I don't collect credentials. I build things that make money and change markets."
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Build Something Massive?</h2>
+            <p class="cta-subtitle">
+                I'm not looking for a job. I'm looking for my next billion-dollar company to build with you.<br>
+                While I'll eventually start my own, right now I want to pour everything I've learned into building YOUR vision.<br>
+                Let's create something that matters.
+            </p>
+            <a href="mailto:sohammehta.e@gmail.com" class="cta-button">Let's Build Together</a>
+            
+            <div class="badges">
+                <span class="badge">Founder Mentality</span>
+                <span class="badge">0→1 Builder</span>
+                <span class="badge">Revenue-First Mindset</span>
+                <span class="badge">Speed & Execution</span>
+            </div>
         </div>
     </div>
 </body>
