@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Mehta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', system-ui, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+        }
+
+        .name {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: #888;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .contact {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .contact a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact a:hover {
+            color: #fff;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .stat {
+            padding: 20px;
+            background: #0a0a0a;
+            border-radius: 6px;
+            border: 1px solid #1a1a1a;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .exp-header {
+            margin-bottom: 16px;
+        }
+
+        .exp-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .exp-company {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .exp-meta {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .exp-description {
+            font-size: 15px;
+            color: #aaa;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            padding-left: 20px;
+            margin-bottom: 12px;
+            position: relative;
+            font-size: 14px;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .achievements li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #444;
+        }
+
+        .achievements strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .quote {
+            font-size: 18px;
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #1a1a1a;
+            margin-top: 60px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #888;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+            }
+            
+            .header {
+                border-bottom-color: #ddd;
+            }
+            
+            .highlight-box {
+                background: #f5f5f5;
+                border-color: #ddd;
+            }
+            
+            .stat {
+                background: #fafafa;
+                border-color: #eee;
+            }
+            
+            .achievements li:before {
+                color: #999;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="name">Soham Mehta</h1>
+            <p class="tagline">Built & scaled 2 startups before 21. ₹2Mn revenue in 4 months, profitable from Day 1.</p>
+            <div class="contact">
+                <span>sohammehta.e@gmail.com</span>
+                <span>+91 9343584820</span>
+                <a href="https://linkedin.com/in/sohamehta">linkedin.com/in/sohamehta</a>
+                <span>Hyderabad, India</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Track Record</h2>
+            <div class="highlight-box">
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">₹2Mn</div>
+                        <div class="stat-label">Revenue in 4 months (Aphrelle)</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">₹450Cr</div>
+                        <div class="stat-label">Pipeline built (Week 1, Truva)</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3Mn+</div>
+                        <div class="stat-label">Organic impressions driven</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">VCs pitched (multiple term sheets)</div>
+                    </div>
+                </div>
+                <p style="color: #888; font-size: 14px;">
+                    2x founder (BITS Pilani). Razorpay Rize Top 15 (Peak XV & Lightspeed backed). ICE 2025 finalist (only Indian team in Top 20). WTFund Top 13% (Nikhil Kamath). Cross-functional operator: healthtech, e-com, D2C, proptech, B2B SaaS.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">What I've Built</h2>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Founder & CEO, Aphrelle</div>
+                    <div class="exp-company">BITS Pilani's fastest-scaling student startup</div>
+                    <div class="exp-meta">Apr 2024 – Present</div>
+                </div>
+                <p class="exp-description">₹2Mn+ revenue in 4 months, bootstrapped & profitable from Day 1</p>
+                <ul class="achievements">
+                    <li><strong>Day 1 profitability</strong> — negotiated supplier deals at 38-42% margins, zero external capital. Received pre-seed offers at ₹50-100Cr valuation</li>
+                    <li><strong>Scaled 10-person team</strong> (ops, growth, tech) across 3 cities while full-time in college. Built SOPs for order fulfillment, inventory, campus distribution</li>
+                    <li><strong>Dominated national competitions</strong> — SEEP (BITS), Blueprint (IIT Delhi - Top 3/10,000+), Empresario (IIT KGP), Techfest (IIT Bombay)</li>
+                    <li><strong>Pivoted to tech-first marketplace</strong> after 200+ customer interviews. Rebuilt product model in 6 weeks</li>
+                    <li><strong>Built influencer engine</strong> — 3Mn+ organic LinkedIn impressions, 40% revenue from word-of-mouth</li>
+                    <li><strong>Pitched 20+ top VCs</strong> — closed offers from angels & institutions (Kalaari, Peak XV, Antler pipelines)</li>
+                    <li><strong>UP Government recognition</strong> — Startup India certified, DPIIT registered, ₹7.5L+ grants secured</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Acquisitions, Truva</div>
+                    <div class="exp-company">Proptech (Stellaris-backed, $7M Series A)</div>
+                    <div class="exp-meta">Jul 2025 – Present</div>
+                </div>
+                <p class="exp-description">Handling key launches & high-ticket deal closures</p>
+                <ul class="achievements">
+                    <li><strong>₹450Cr pipeline in Week 1</strong> — sourced & qualified 15 deals (₹20-80Cr tickets each)</li>
+                    <li><strong>Closed largest client</strong> — Bennett Coleman & Co. ($1.3Bn revenue, Top 10 secondary real estate in India). Cold outreach to signed LOI in 3 weeks</li>
+                    <li><strong>Built HNI trust frameworks</strong> — pitch decks, financial models, market comps for ₹20-80Cr asset sales</li>
+                    <li><strong>Leading Truva Select Program</strong> — exclusive HNI community launch + premium segment growth strategy</li>
+                    <li><strong>Core strategic projects</strong> — working directly with COO & CEO on marketplace liquidity, seller acquisition playbooks</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Founder's Office, Swift</div>
+                    <div class="exp-company">E-com Infra (Kalaari-backed, $2.2M Pre-Series A)</div>
+                    <div class="exp-meta">May 2025 – Jul 2025</div>
+                </div>
+                <p class="exp-description">Series A e-commerce platform (logistics, checkout, payments, analytics)</p>
+                <ul class="achievements">
+                    <li><strong>Identified 3 critical bottlenecks</strong> — customer success handoffs, ticket aging, zero courier visibility for KAMs</li>
+                    <li><strong>Built ticket triage framework</strong> — escalation aging + seller sentiment scoring for high-risk flagging</li>
+                    <li><strong>Tech collaboration on ML pilots</strong> — sentiment analysis model for auto-flagging at-risk sellers pre-churn</li>
+                    <li><strong>Real-time workflows</strong> — Slack alerts for KAMs on courier delays, stuck orders, payment disputes</li>
+                    <li><strong>LinkedIn brand strategy</strong> — 350% visibility increase, 280% higher engagement vs competitors. Set brand voice across all channels</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Chief of Staff, SparshaCare Innovations</div>
+                    <div class="exp-company">HealthTech (Pressure-sensor monitoring)</div>
+                    <div class="exp-meta">Aug 2024 – Mar 2025</div>
+                </div>
+                <ul class="achievements">
+                    <li><strong>Product-ready in 6 months</strong> — raised ₹1Cr+ in govt & institutional grants (BIRAC, Startup India)</li>
+                    <li><strong>GTM & business model</strong> — secured ₹25L+ B2B pre-orders before MVP (hospitals, eldercare facilities)</li>
+                    <li><strong>Full-stack operator</strong> — handled biz model, GTM, ops, fundraising, vendor negotiations, regulatory research</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Founder & CEO, Heetle</div>
+                    <div class="exp-meta">Jun 2023 – Mar 2024</div>
+                </div>
+                <ul class="achievements">
+                    <li>Secured ₹5L institutional support, pre-incubated at BITS Pilani</li>
+                    <li>Built early product, pivoted after co-founder exit. Key learning: speed matters, but founder-market fit matters more</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Background</h2>
+            <div class="exp-header">
+                <div class="exp-title">BITS Pilani Hyderabad Campus</div>
+                <div class="exp-company">Electrical & Electronics Engineering</div>
+                <div class="exp-meta">Aug 2023 – Mar 2026 (Early graduation: 3 years instead of 4)</div>
+            </div>
+            <ul class="achievements">
+                <li><strong>Only 1st-year to close national TV sponsors</strong> (Dept. of Sponsorship & Marketing)</li>
+                <li><strong>Wall Street Club</strong> — solo generated ₹50K+ revenue in 1 day during fest</li>
+                <li><strong>Youngest team leader (19)</strong> — leading BITS Pilani to Smart India Hackathon 2025 Finals (world's largest open innovation model)</li>
+                <li>E-Cell member before scaling Aphrelle full-time</li>
+            </ul>
+        </div>
+
+        <div class="quote">
+            "Most people optimize for credentials. I optimize for speed and impact."
+        </div>
+    </div>
+</body>
+</html>
