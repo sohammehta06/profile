@@ -12,9 +12,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', system-ui, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
-            color: #fff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #fefefe;
+            color: #2d3748;
             line-height: 1.6;
             padding: 0;
         }
@@ -25,142 +25,143 @@
             padding: 60px 40px;
         }
 
-        /* HEADER WITH PUNCH */
+        /* HEADER WITH PHOTO */
         .header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
             margin-bottom: 80px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #e2e8f0;
             padding-bottom: 50px;
-            position: relative;
+            align-items: start;
         }
 
-        .header::after {
-            content: "";
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100px;
-            height: 2px;
-            background: #00ff88;
+        .header-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-container {
+            text-align: center;
+        }
+
+        .photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e2e8f0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         .name {
-            font-size: 64px;
-            font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #fff 0%, #00ff88 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
+            color: #1a202c;
+            line-height: 1.1;
         }
 
         .tagline {
-            font-size: 24px;
-            color: #00ff88;
-            font-weight: 600;
+            font-size: 20px;
+            color: #4a5568;
+            font-weight: 500;
             margin-bottom: 30px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .contact {
             display: flex;
-            gap: 30px;
+            gap: 16px;
             flex-wrap: wrap;
-            font-size: 15px;
-            color: #888;
+            font-size: 14px;
         }
 
         .contact a {
-            color: #888;
+            color: #4a5568;
             text-decoration: none;
             transition: all 0.2s;
-            border: 1px solid #333;
-            padding: 8px 16px;
+            border: 1px solid #e2e8f0;
+            padding: 6px 14px;
             border-radius: 6px;
+            background: #f8fafc;
         }
 
         .contact a:hover {
-            color: #00ff88;
-            border-color: #00ff88;
-            transform: translateY(-2px);
+            color: #2d3748;
+            border-color: #cbd5e0;
+            background: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         /* PUNCHY STATS */
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 70px;
         }
 
         .section-title {
-            font-size: 13px;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #00ff88;
-            margin-bottom: 30px;
-            font-weight: 700;
+            letter-spacing: 2px;
+            color: #718096;
+            margin-bottom: 24px;
+            font-weight: 600;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #111 0%, #000 100%);
-            border: 1px solid #222;
+            background: #fff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 40px;
             margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
             margin-bottom: 30px;
         }
 
         .stat {
-            padding: 30px;
-            background: linear-gradient(135deg, #000 0%, #111 100%);
-            border: 1px solid #333;
+            padding: 28px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
             border-radius: 10px;
             transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #00ff88;
+            text-align: center;
         }
 
         .stat:hover {
-            transform: translateY(-5px);
-            border-color: #00ff88;
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+            transform: translateY(-2px);
+            border-color: #cbd5e0;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
         }
 
         .stat-number {
-            font-size: 42px;
-            font-weight: 800;
-            color: #00ff88;
-            margin-bottom: 8px;
+            font-size: 36px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 6px;
             line-height: 1;
         }
 
         .stat-label {
             font-size: 14px;
-            color: #888;
+            color: #718096;
             font-weight: 500;
         }
 
-        /* EXPERIENCE WITH BITE */
+        /* EXPERIENCE */
         .experience-item {
-            margin-bottom: 60px;
-            padding-bottom: 60px;
-            border-bottom: 1px solid #222;
-            position: relative;
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .experience-item:last-child {
@@ -174,45 +175,45 @@
         }
 
         .exp-title {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 600;
             margin-bottom: 4px;
-            color: #fff;
+            color: #1a202c;
         }
 
         .exp-company {
             font-size: 18px;
-            color: #00ff88;
-            margin-bottom: 8px;
-            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
 
         .exp-company a {
-            color: #00ff88;
+            color: #4a5568;
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: all 0.2s;
         }
 
         .exp-company a:hover {
-            border-bottom: 1px solid #00ff88;
+            border-bottom: 1px solid #4a5568;
         }
 
         .exp-meta {
             font-size: 14px;
-            color: #666;
+            color: #718096;
             font-weight: 500;
         }
 
         .exp-description {
             font-size: 16px;
-            color: #aaa;
+            color: #4a5568;
             margin-bottom: 20px;
-            font-weight: 600;
-            background: #111;
+            font-weight: 500;
+            background: #f8fafc;
             padding: 16px 20px;
             border-radius: 8px;
-            border-left: 3px solid #00ff88;
+            border-left: 3px solid #e2e8f0;
         }
 
         .achievements {
@@ -220,104 +221,103 @@
         }
 
         .achievements li {
-            padding-left: 24px;
-            margin-bottom: 16px;
+            padding-left: 20px;
+            margin-bottom: 14px;
             position: relative;
             font-size: 15px;
-            color: #ccc;
-            line-height: 1.7;
+            color: #4a5568;
+            line-height: 1.6;
         }
 
         .achievements li:before {
-            content: "⚡";
+            content: "—";
             position: absolute;
             left: 0;
-            color: #00ff88;
-            font-weight: bold;
+            color: #a0aec0;
+            font-weight: normal;
         }
 
         .achievements strong {
-            color: #fff;
-            font-weight: 700;
-        }
-
-        /* FOUNDER ENERGY QUOTE */
-        .quote {
-            font-size: 20px;
-            color: #00ff88;
-            text-align: center;
-            padding: 60px 0;
-            border-top: 1px solid #222;
-            margin-top: 80px;
+            color: #1a202c;
             font-weight: 600;
-            font-style: normal;
-            background: linear-gradient(135deg, #111 0%, #000 100%);
-            border-radius: 12px;
-            margin: 80px 0;
         }
 
-        /* CALL TO ACTION - FOUNDER ENERGY */
-        .cta-section {
-            background: linear-gradient(135deg, #000 0%, #111 100%);
-            border: 2px solid #00ff88;
-            border-radius: 16px;
-            padding: 60px;
+        /* QUOTE */
+        .quote {
+            font-size: 18px;
+            color: #4a5568;
             text-align: center;
-            margin-top: 80px;
+            padding: 50px 0;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 70px;
+            font-weight: 500;
+            font-style: italic;
+            background: #f8fafc;
+            border-radius: 12px;
+            margin: 70px 0;
+        }
+
+        /* CALL TO ACTION */
+        .cta-section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 50px;
+            text-align: center;
+            margin-top: 70px;
         }
 
         .cta-title {
-            font-size: 32px;
-            font-weight: 800;
-            color: #00ff88;
-            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 16px;
         }
 
         .cta-subtitle {
-            font-size: 18px;
-            color: #ccc;
+            font-size: 16px;
+            color: #4a5568;
             margin-bottom: 30px;
             line-height: 1.6;
         }
 
         .cta-button {
             display: inline-block;
-            background: #00ff88;
-            color: #000;
-            padding: 16px 40px;
+            background: #1a202c;
+            color: #fff;
+            padding: 14px 36px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
+            font-weight: 600;
+            font-size: 15px;
             transition: all 0.3s;
-            border: 2px solid #00ff88;
+            border: 1px solid #1a202c;
         }
 
         .cta-button:hover {
-            background: transparent;
-            color: #00ff88;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+            background: #2d3748;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
 
         /* BADGES */
         .badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             margin-top: 20px;
             justify-content: center;
         }
 
         .badge {
             display: inline-block;
-            padding: 8px 16px;
-            background: #111;
-            border: 1px solid #333;
+            padding: 6px 14px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
             border-radius: 6px;
             font-size: 12px;
-            color: #00ff88;
-            font-weight: 600;
+            color: #4a5568;
+            font-weight: 500;
         }
 
         /* RESPONSIVE */
@@ -326,12 +326,18 @@
                 padding: 40px 20px;
             }
             
+            .header {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
             .name {
-                font-size: 48px;
+                font-size: 42px;
             }
             
             .tagline {
-                font-size: 20px;
+                font-size: 18px;
             }
             
             .stats {
@@ -339,8 +345,7 @@
             }
             
             .contact {
-                flex-direction: column;
-                gap: 15px;
+                justify-content: center;
             }
             
             .cta-section {
@@ -373,14 +378,19 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="name">Soham Mehta</h1>
-            <p class="tagline">Built ₹2Mn revenue in 4 months. Profitable from Day 1. Now building the next billion-dollar company.</p>
-            <div class="contact">
-                <a href="mailto:sohammehta.e@gmail.com">sohammehta.e@gmail.com</a>
-                <a href="tel:+919343584820">+91 9343584820</a>
-                <a href="https://linkedin.com/in/sohamehta" target="_blank">LinkedIn</a>
-                <a href="https://www.truva.in" target="_blank">Truva</a>
-                <a href="https://www.goswift.in/" target="_blank">Swift</a>
+            <div class="header-content">
+                <h1 class="name">Soham Mehta</h1>
+                <p class="tagline">Built ₹2Mn revenue in 4 months. Profitable from Day 1. Now building the next billion-dollar company.</p>
+                <div class="contact">
+                    <a href="mailto:sohammehta.e@gmail.com">sohammehta.e@gmail.com</a>
+                    <a href="tel:+919343584820">+91 9343584820</a>
+                    <a href="https://linkedin.com/in/sohamehta" target="_blank">LinkedIn</a>
+                    <a href="https://www.truva.in" target="_blank">Truva</a>
+                    <a href="https://www.goswift.in/" target="_blank">Swift</a>
+                </div>
+            </div>
+            <div class="photo-container">
+                <img src="sohamtruvaiit.jpeg" alt="Soham Mehta" class="photo">
             </div>
         </div>
 
@@ -405,7 +415,7 @@
                         <div class="stat-label">Organic impressions</div>
                     </div>
                 </div>
-                <p style="color: #888; font-size: 16px; line-height: 1.6;">
+                <p style="color: #718096; font-size: 16px; line-height: 1.6;">
                     2x founder who actually ships. Razorpay Rize Top 15. ICE 2025 finalist (only Indian team). WTFund Top 13%. 
                     Cross-functional operator across healthtech, e-com, D2C, proptech, B2B SaaS. I don't just talk about building - I build.
                 </p>
@@ -500,10 +510,10 @@
             <h2 class="section-title">Where It Started</h2>
             <div class="exp-header">
                 <div class="exp-title">
-                    <a href="https://www.bits-pilani.ac.in/" target="_blank" style="color: #fff; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;" onmouseover="this.style.borderBottom='1px solid #00ff88'" onmouseout="this.style.borderBottom='1px solid transparent'">BITS Pilani Hyderabad Campus</a>
+                    <a href="https://www.bits-pilani.ac.in/" target="_blank" style="color: #1a202c; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;" onmouseover="this.style.borderBottom='1px solid #4a5568'" onmouseout="this.style.borderBottom='1px solid transparent'">BITS Pilani Hyderabad Campus</a>
                 </div>
                 <div class="exp-company">Electrical & Electronics Engineering</div>
-                <div class="exp-meta">Aug 2023 – Mar 2026 (Early graduation: 3 years instead of 4)</div>
+                <div class="exp-meta">Aug 2023 – Apr 2026 (Early graduation: 3 years instead of 4)</div>
             </div>
             <ul class="achievements">
                 <li><strong>Only 1st-year to close national TV sponsors</strong> (Dept. of Sponsorship & Marketing)</li>
@@ -526,8 +536,12 @@
             </p>
             <a href="mailto:sohammehta.e@gmail.com" class="cta-button">Let's Build Together</a>
             
-            <div style="text-align: center; margin-top: 30px;">
-    <p style="color: #00ff88; font-size: 14px; font-weight: 600;">
-        Building > Talking • Revenue > Vanity Metrics • Execution > Ideas
-    </p>
-</div>
+            <div class="badges">
+                <span class="badge">Building > Talking</span>
+                <span class="badge">Revenue > Vanity Metrics</span>
+                <span class="badge">Execution > Ideas</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
