@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soham Mehta - Builder. Founder. Operator.</title>
+    <title>Soham Mehta - Founder-Grade Operator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,24 +15,26 @@
         }
 
         :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #111827;
-            --bg-card: #1f2937;
-            --border: #374151;
-            --text-primary: #f9fafb;
-            --text-secondary: #d1d5db;
-            --text-muted: #9ca3af;
-            --accent: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.15);
+            --bg: #000000;
+            --bg-elevated: #0a0a0a;
+            --bg-card: #111111;
+            --border: #1a1a1a;
+            --border-hover: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            --text-tertiary: #737373;
+            --accent: #ffffff;
+            --accent-glow: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: var(--bg-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
             color: var(--text-primary);
             line-height: 1.6;
-            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
             font-weight: 400;
+            cursor: default;
         }
 
         html {
@@ -40,113 +42,143 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 32px;
         }
 
         /* Header */
         .header {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 80px;
-            align-items: start;
             padding: 120px 0 80px;
             position: relative;
-        }
-
-        .header-content {
-            max-width: 800px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 80px;
         }
 
         .name {
-            font-size: 5rem;
+            font-size: 4rem;
             font-weight: 700;
             letter-spacing: -0.03em;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #fff 0%, #cbd5e0 100%);
+            margin-bottom: 8px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 1.1;
         }
 
         .tagline {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--text-secondary);
             font-weight: 400;
-            margin-bottom: 48px;
+            margin-bottom: 8px;
             line-height: 1.5;
+        }
+
+        .sub-tagline {
+            font-size: 1rem;
+            color: var(--text-tertiary);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 600px;
         }
 
         .contact {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .contact a {
             color: var(--text-secondary);
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            padding: 10px 18px;
             border: 1px solid var(--border);
-            padding: 12px 24px;
             border-radius: 8px;
             background: var(--bg-card);
-            font-size: 0.9rem;
-            font-weight: 500;
         }
 
         .contact a:hover {
             color: var(--text-primary);
             border-color: var(--accent);
-            background: rgba(99, 102, 241, 0.1);
+            background: var(--accent-glow);
+            transform: translateY(-1px);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            margin: 80px 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .stat {
+            background: var(--bg-card);
+            padding: 40px 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .stat:hover::before {
+            left: 100%;
+        }
+
+        .stat:hover {
+            background: var(--bg-elevated);
             transform: translateY(-2px);
         }
 
-        /* Photo */
-        .photo-container {
-            position: relative;
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1;
         }
 
-        .photo {
-            width: 280px;
-            height: 280px;
-            border-radius: 24px;
-            object-fit: cover;
-            object-position: center top;
-            border: 1px solid var(--border);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            filter: grayscale(0.1) contrast(1.05);
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            font-weight: 400;
+            line-height: 1.4;
         }
 
-        .photo:hover {
-            transform: scale(1.02) translateY(-4px);
-            box-shadow: 0 30px 80px rgba(99, 102, 241, 0.2);
-            filter: grayscale(0) contrast(1.1);
-        }
-
-        /* Sections */
+        /* Section */
         .section {
-            margin-bottom: 120px;
+            margin-bottom: 100px;
             opacity: 0;
             transform: translateY(30px);
-            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            color: var(--text-tertiary);
             margin-bottom: 48px;
             font-weight: 600;
             position: relative;
@@ -158,98 +190,42 @@
             position: absolute;
             bottom: -8px;
             left: 0;
-            width: 40px;
-            height: 2px;
+            width: 30px;
+            height: 1px;
             background: var(--accent);
-            border-radius: 2px;
-        }
-
-        /* Stats */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 48px;
-        }
-
-        .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px 32px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .stat-card:hover::before {
-            left: 100%;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px var(--accent-glow);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 500;
         }
 
         /* Experience */
-        .experience-item {
+        .exp-item {
             margin-bottom: 80px;
             padding-bottom: 80px;
             border-bottom: 1px solid var(--border);
             position: relative;
         }
 
-        .experience-item:last-child {
+        .exp-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
 
         .exp-header {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 24px;
-            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
             align-items: start;
+            margin-bottom: 16px;
+            gap: 24px;
         }
 
         .exp-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text-primary);
+            margin-bottom: 6px;
         }
 
         .exp-company {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-secondary);
-            font-weight: 500;
         }
 
         .exp-company a {
@@ -259,112 +235,110 @@
         }
 
         .exp-company a:hover {
-            color: var(--accent);
+            color: var(--text-primary);
         }
 
-        .exp-meta {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            white-space: nowrap;
             font-weight: 500;
-            text-align: right;
         }
 
         .exp-description {
             font-size: 1rem;
             color: var(--text-secondary);
             margin-bottom: 24px;
-            font-weight: 500;
-            background: var(--bg-card);
             padding: 20px 24px;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
+            background: var(--bg-card);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+            font-weight: 500;
         }
 
-        .exp-title a {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.exp-title a:hover {
-    color: var(--accent);
-}
-
-        .achievements {
+        .exp-achievements {
             list-style: none;
             display: grid;
             gap: 16px;
         }
 
-        .achievements li {
-            padding-left: 0;
+        .exp-achievements li {
             color: var(--text-secondary);
-            line-height: 1.7;
-            position: relative;
+            line-height: 1.6;
             font-size: 0.95rem;
+            padding-left: 20px;
+            position: relative;
+            transition: color 0.3s ease;
         }
 
-        .achievements strong {
+        .exp-achievements li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-tertiary);
+            font-weight: 400;
+        }
+
+        .exp-achievements li:hover {
+            color: var(--text-primary);
+        }
+
+        .exp-achievements strong {
             color: var(--text-primary);
             font-weight: 600;
         }
 
-        /* Quote */
-        .quote-section {
-            text-align: center;
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .quote {
-            font-size: 2rem;
-            color: var(--text-primary);
-            font-weight: 400;
-            line-height: 1.4;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            font-style: italic;
-        }
-
-        .quote::before,
-        .quote::after {
-            content: '"';
-            color: var(--accent);
-            font-size: 4rem;
-            position: absolute;
-            opacity: 0.3;
-        }
-
-        .quote::before {
-            top: -40px;
-            left: -60px;
-        }
-
-        .quote::after {
-            bottom: -80px;
-            right: -60px;
-        }
-
-        /* CTA */
-        .cta-section {
+        /* Founder Proof */
+        .founder-proof {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 80px 60px;
-            text-align: center;
-            margin: 120px 0;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 32px;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-section::before {
+        .founder-proof::before {
             content: "";
             position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .founder-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .founder-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* CTA */
+        .cta {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 80px 60px;
+            text-align: center;
+            margin: 120px 0;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
             background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
             animation: float 6s ease-in-out infinite;
         }
@@ -377,42 +351,42 @@
         .cta-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--text-primary);
             margin-bottom: 24px;
             line-height: 1.2;
+            position: relative;
+            z-index: 2;
         }
 
-        .cta-subtitle {
+        .cta-text {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 48px;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 2;
         }
 
         .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--accent);
-            color: var(--text-primary);
-            padding: 20px 48px;
-            border-radius: 12px;
+            display: inline-block;
+            background: var(--text-primary);
+            color: var(--bg);
+            padding: 16px 40px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--text-primary);
+            border-radius: 8px;
             position: relative;
             z-index: 2;
         }
 
         .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px var(--accent-glow);
-            background: #4f46e5;
+            background: transparent;
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
         }
 
         .badges {
@@ -421,15 +395,17 @@
             justify-content: center;
             margin-top: 32px;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
         }
 
         .badge {
             padding: 8px 16px;
-            background: var(--bg-primary);
+            background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 6px;
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: var(--text-tertiary);
             font-weight: 500;
             transition: all 0.3s ease;
         }
@@ -437,67 +413,74 @@
         .badge:hover {
             color: var(--text-primary);
             border-color: var(--accent);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
+        }
+
+        /* Interactive Elements */
+        .metric-highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .hover-glow {
+            transition: all 0.3s ease;
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        /* Senior Enhancements */
+        .senior-statement {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin: 60px 0;
+            font-style: italic;
+            line-height: 1.7;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .senior-statement strong {
+            color: var(--text-primary);
+            font-weight: 600;
         }
 
         /* Responsive */
-        @media (max-width: 968px) {
-            .header {
-                grid-template-columns: 1fr;
-                gap: 60px;
-                text-align: center;
-            }
-            
-            .name {
-                font-size: 3.5rem;
-            }
-            
-            .photo {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .exp-header {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            
-            .exp-meta {
-                text-align: left;
-            }
-        }
-
         @media (max-width: 768px) {
             .container {
-                padding: 0 24px;
+                padding: 0 20px;
             }
-            
+
             .name {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
-            
-            .tagline {
-                font-size: 1.2rem;
+
+            .header {
+                padding: 80px 0 40px;
             }
-            
-            .stats-grid {
+
+            .exp-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .exp-date {
+                text-align: left;
+            }
+
+            .stats {
                 grid-template-columns: 1fr;
             }
-            
-            .cta-section {
+
+            .cta {
                 padding: 60px 32px;
             }
-            
+
             .cta-title {
                 font-size: 2rem;
-            }
-            
-            .quote {
-                font-size: 1.5rem;
-            }
-            
-            .contact {
-                justify-content: center;
             }
         }
 
@@ -516,110 +499,119 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <header class="header">
-            <div class="header-content">
-                <h1 class="name">Soham Mehta</h1>
-                <p class="tagline">Built ₹2Mn revenue in 4 months. Profitable from Day 1. Building the next billion-dollar company.</p>
-                <div class="contact">
-                    <a href="mailto:sohammehta.e@gmail.com">sohammehta.e@gmail.com</a>
-                    <a href="tel:+919343584820">+91 9343584820</a>
-                    <a href="https://linkedin.com/in/sohamehta" target="_blank">LinkedIn</a>
-                    <a href="https://www.truva.in" target="_blank">Truva</a>
-                    <a href="https://www.goswift.in/" target="_blank">Swift</a>
-                </div>
+            <h1 class="name">Soham Mehta</h1>
+            <p class="tagline">Founder-Grade Operator</p>
+            <p class="sub-tagline">From ₹2Mn revenue in 4 months to managing $50K capital & closing $5M partnerships. 19. Moving faster than the rest.</p>
+            <div class="contact">
+                <a href="mailto:sohammehta.e@gmail.com">sohammehta.e@gmail.com</a>
+                <a href="tel:+919343584820">+91 9343584820</a>
+                <a href="https://linkedin.com/in/sohamehta" target="_blank">LinkedIn</a>
+                <a href="https://lyzr.ai" target="_blank">Lyzr</a>
+                <a href="https://www.truva.in" target="_blank">Truva</a>
+                <a href="https://www.goswift.in/" target="_blank">Swift</a>
             </div>
-            <div class="photo-container">
-                <img src="https://i.ibb.co/pvTzd21j/sohamtruvaiit.jpg" alt="Soham Mehta" class="photo">
-            </div>
-        </header> 
+        </header>
 
-        <!-- Stats Section -->
-        <section class="section fade-in">
-            <h2 class="section-title">The Numbers Don't Lie</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">₹2Mn+</div>
-                    <div class="stat-label">Revenue in 4 months</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">₹45Cr+</div>
-                    <div class="stat-label">Pipeline built (Week 2)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">30+</div>
-                    <div class="stat-label">Top VCs pitched (multiple term sheets)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5Mn+</div>
-                    <div class="stat-label">Linkedin</div>
-                </div>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">₹2Mn+</div>
+                <div class="stat-label">Revenue in 4 months<br>Bootstrapped, profitable Day 1</div>
             </div>
-            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; max-width: 800px;">
-                2x founder who actually ships. <br> Razorpay Rize Top 15 (backed by Peak XV & Lightspeed) → ₹3Mn+ resources + 10Mn+ customer base. <br>ICE 2025 finalist (only Indian team in the world). <br> WTFund Top 13% (Nikhil Kamath). <br> EF Round 2. <br> Top 0.2% AJVC. 
-                <br> Cross-functional operator across healthtech, e-com, D2C, proptech, B2B SaaS. <br> <br> I don't just talk about building - I build.
-            </p>
-        </section>
+            <div class="stat">
+                <div class="stat-number">$4.7Mn</div>
+                <div class="stat-label">Pipeline built in 2 weeks<br>At Truva (Stellaris-backed)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$5M</div>
+                <div class="stat-label">Partnership deal in progress<br>Times of India → Lyzr</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Top VCs engaged<br>Multiple term sheets secured</div>
+            </div>
+        </div>
 
-        <!-- Experience Section -->
+        <p class="senior-statement">
+            <strong>I don't just execute—I create leverage.</strong> From founding profitable ventures to operating in founder's offices, I build systems that scale and close deals that matter. When I join your team, you're not hiring an employee—you're gaining a co-builder who moves with founder-level urgency.
+        </p>
+
         <section class="section fade-in">
-            <h2 class="section-title">What I've Built & Scaled</h2>
-            
-            <div class="experience-item">
+            <h2 class="section-title">Founder-Level Execution</h2>
+
+            <div class="founder-proof">
+                <p class="founder-text">
+                    <strong>2x founder who ships.</strong> Razorpay Rize Top 15 (Peak XV & Lightspeed backed) → ₹3Mn+ resources + 10Mn+ customer base. ICE 2025 finalist (only Indian team). WTFund Top 13% (Nikhil Kamath). EF Round 2. Top 0.2% AJVC. Cross-functional operator across healthtech, e-commerce, D2C, proptech, B2B SaaS, AI infrastructure.
+                </p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Founder's Office, Lyzr AI</div>
+                        <div class="exp-company"><a href="https://lyzr.ai" target="_blank">AI Agent Infrastructure ($8Mn Series A, Rocketship.vc & Accenture-backed)</a></div>
+                    </div>
+                    <div class="exp-date">Oct 2025 – Present</div>
+                </div>
+                <p class="exp-description">Enterprise AI agent platform powering NVIDIA, Accenture, Publicis, Under Armour</p>
+                <ul class="exp-achievements">
+                    <li><strong>Offered role in one 20-minute call</strong> — founder bet on pure conviction</li>
+                    <li><strong>Leading Agentpreneur Program</strong> — accelerator deploying $50K across 5 ventures (shortlisted from 70+ applicants)</li>
+                    <li><strong>Sourced and negotiating $5Mn media partnership with Times of India</strong> (India's largest media company) — positioning for Series B</li>
+                    <li><strong>Driving new verticals in prosumer space</strong> — working on partnership with Topmate CEO Ankit Agarwal</li>
+                    <li><strong>Managing founder's capital</strong> — $50K deployed across new ventures after a month of building with them</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
                 <div class="exp-header">
                     <div>
                         <div class="exp-title">Founder & CEO, Aphrelle</div>
-                        <div class="exp-company">
-                            <a href="https://www.linkedin.com/company/aphrelle" target="_blank">BITS Pilani's fastest-scaling student startup</a>
-                        </div>
+                        <div class="exp-company"><a href="https://www.linkedin.com/company/aphrelle" target="_blank">BITS Pilani's fastest-scaling student startup</a></div>
                     </div>
-                    <div class="exp-meta">Apr 2024 – Present</div>
+                    <div class="exp-date">Apr 2024 – Present</div>
                 </div>
-                <p class="exp-description">₹2Mn+ revenue in 4 months, bootstrapped & profitable from Day 1</p>
-                <ul class="achievements">
+                <p class="exp-description">₹2Mn revenue in 4 months, bootstrapped & profitable from Day 1</p>
+                <ul class="exp-achievements">
                     <li><strong>Profitable from Day 1</strong> — 38-42% margins, zero external capital. Received pre-seed offers at ₹5-10Cr valuation, secured multiple term sheets</li>
                     <li><strong>Recruited & led 10+ batchmates</strong> across ops, growth & tech while full-time in college. Built SOPs for order fulfillment, inventory, campus distribution</li>
-                    <li><strong>Dominated India's biggest competitions (Total Earnings: ₹3.4L)</strong> — SEEP (BITS), EO GSEA, Blueprint (IIT Delhi - Top 3/10,000+ startups), Empresario (IIT KGP), Techfest (IIT Bombay)</li>
+                    <li><strong>Dominated India's biggest competitions</strong> (Total earnings: ₹3.4L) — SEEP (BITS), EO GSEA, Blueprint (IIT Delhi - Top 3/10,000+ startups), Empresario (IIT KGP), Techfest (IIT Bombay)</li>
                     <li><strong>WTFund Top 13% (Nikhil Kamath) + EF Round 2 + Top 0.2% AJVC + ICE 2025 Global Top 20</strong> (only Indian team)</li>
                     <li><strong>Pivoted based on real feedback</strong> — 200+ customer interviews → D2C to tech-first marketplace model, rebuilt in 6 weeks</li>
-                    <li><strong>Built Personal Brand from scratch</strong> — drove 5Mn+ organic LinkedIn impressions, 40% revenue from word-of-mouth</li>
+                    <li><strong>Built personal brand from scratch</strong> — drove 5Mn+ organic LinkedIn impressions, 40% revenue from word-of-mouth</li>
                     <li><strong>Hustled 30+ top VCs</strong> — secured multiple term sheets from angels & institutional investors (Kalaari, Peak XV, Accel, Antler)</li>
-                    <li><strong>Recognised by UP Government</strong> — Startup India certified, DPIIT registered, ₹7.5L+ grants secured</li>
+                    <li><strong>Recognized by UP Government</strong> — Startup India certified, DPIIT registered, ₹7.5L+ grants secured</li>
                 </ul>
             </div>
 
-            <div class="experience-item">
+            <div class="exp-item">
                 <div class="exp-header">
                     <div>
                         <div class="exp-title">Acquisitions, Truva</div>
-                        <div class="exp-company">
-                            <a href="https://www.truva.in" target="_blank">Proptech (Stellaris-backed, $7M Series A)</a>
-                        </div>
+                        <div class="exp-company"><a href="https://www.truva.in" target="_blank">Proptech (Stellaris-backed, $7M Series A)</a></div>
                     </div>
-                    <div class="exp-meta">Jul 2025 – Present</div>
+                    <div class="exp-date">Jul 2025 – Nov 2025</div>
                 </div>
-                <p class="exp-description">Handling key launches & closing high-ticket deals</p>
-                <ul class="achievements">
-                    <li><strong>Built ₹45CR pipeline in first 2 weeks</strong> — sourced and qualified 15 deals (₹2-9Cr tickets each)</li>
-                    <li><strong>Brought their biggest client</strong> — Bennett Coleman & Co. ($1.3Bn revenue, having top 10 secondary real estate in India). Cold outreach to signed LOI in 3 weeks</li>
+                <p class="exp-description">Led Truperless buyer visit pilot & closed high-ticket deals</p>
+                <ul class="exp-achievements">
+                    <li><strong>Built ₹45Cr pipeline in first 2 weeks</strong> — sourced and qualified 15 deals (₹2-9Cr tickets each)</li>
+                    <li><strong>Brought their biggest client</strong> — Bennett Coleman & Co. ($1.3Bn revenue, top 10 secondary real estate in India). Cold outreach to signed LOI in 3 weeks</li>
                     <li><strong>Built seller trust for high-ticket deals</strong> — financial models, market comps</li>
-                    <li><strong>Leading Truva Select Program</strong> — HNI exclusive community + growth strategy for premium segment</li>
-                    <li><strong>Working on core projects</strong> with COO & CEO on seller acquisition playbooks</li>
+                    <li><strong>Led Truva Select Program</strong> — HNI exclusive community + growth strategy for premium segment</li>
+                    <li><strong>Worked on core projects</strong> with COO & CEO on seller acquisition playbooks</li>
                 </ul>
             </div>
 
-            <div class="experience-item">
+            <div class="exp-item">
                 <div class="exp-header">
                     <div>
                         <div class="exp-title">Founder's Office, Swift</div>
-                        <div class="exp-company">
-                            <a href="https://www.goswift.in/" target="_blank">E-com Tech Infra (Kalaari-backed, $2.2M Pre-Series A)</a>
-                        </div>
+                        <div class="exp-company"><a href="https://www.goswift.in/" target="_blank">E-commerce Tech Infrastructure (Kalaari-backed, $2.2M Pre-Series A)</a></div>
                     </div>
-                    <div class="exp-meta">May 2025 – Jul 2025</div>
+                    <div class="exp-date">May 2025 – Jul 2025</div>
                 </div>
                 <p class="exp-description">Series A e-commerce platform (logistics, checkout, payments, analytics)</p>
-                <ul class="achievements">
+                <ul class="exp-achievements">
                     <li><strong>Solved 3 critical bottlenecks</strong> — customer success handoffs, ticket prioritization, courier visibility</li>
                     <li><strong>Built ticket triage framework</strong> — escalation aging + seller sentiment analysis for high-risk flagging</li>
                     <li><strong>Collaborated with tech</strong> — sentiment analysis pilots for auto-flagging at-risk sellers pre-churn</li>
@@ -627,80 +619,40 @@
                     <li><strong>Led LinkedIn strategy</strong> — 350%+ profile visibility increase, 280%+ higher engagement vs competitors. Set brand foundation across website, social, leadership brand</li>
                 </ul>
             </div>
-
-            <div class="experience-item">
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-title">Chief of Staff, SparshaCare Innovations</div>
-                        <div class="exp-company">HealthTech (Pressure-sensor monitoring solutions)</div>
-                    </div>
-                    <div class="exp-meta">Aug 2024 – Mar 2025</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Concept to product-ready in 6 months</strong> — raised ₹10Mn+ govt & institutional grants (BIRAC)</li>
-                    <li><strong>Led business model + GTM</strong> — secured ₹2.5Mn+ B2B pre-orders pre-MVP (hospitals, eldercare facilities)</li>
-                    <li><strong>Full-stack execution</strong> — biz model, GTM, ops, fundraising, vendor negotiations, regulatory research</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-title">Founder & CEO, Heetle</div>
-                        <div class="exp-company">Pre-incubated at BITS Pilani</div>
-                    </div>
-                    <div class="exp-meta">Jun 2023 – Mar 2024</div>
-                </div>
-                <ul class="achievements">
-                    <li><strong>Secured ₹5L institutional support</strong> — pre-incubated at BITS Pilani</li>
-                    <li><strong>Built early product</strong> — pivoted after identifying regulatory hurdles. Key learning: speed matters, but founder-market fit matters more</li>
-                </ul>
-            </div>
         </section>
 
-        <!-- Quote Section -->
-        <section class="quote-section fade-in">
-            <blockquote class="quote">
-                Most people want to sound smart. I just want to build fast and win.
-            </blockquote>
-        </section>
-
-        <!-- Education Section -->
         <section class="section fade-in">
-            <h2 class="section-title">Where It Started</h2>
-            <div class="experience-item">
+            <h2 class="section-title">Founder Foundation</h2>
+            <div class="exp-item">
                 <div class="exp-header">
                     <div>
                         <div class="exp-title"><a href="https://www.bits-pilani.ac.in/" target="_blank">BITS Pilani Hyderabad Campus</a></div>
                         <div class="exp-company">Electrical & Electronics Engineering</div>
                     </div>
-                    <div class="exp-meta">Aug 2023 – Apr 2026 (Early graduation: 3 years instead of 4)</div>
+                    <div class="exp-date">Aug 2023 – Apr 2026</div>
                 </div>
-                <ul class="achievements">
+                <ul class="exp-achievements">
+                    <li><strong>Graduating in 3 years instead of 4</strong> — early graduation track</li>
                     <li><strong>Only 1st-year to close national TV sponsors</strong> (Dept. of Sponsorship & Marketing)</li>
                     <li><strong>Wall Street Club</strong> — generated ₹50K+ revenue solo in 1 day during fest</li>
-                    <li><strong>Youngest team leader (19)</strong> — leading BITS Pilani's team to the Finals of Smart India Hackathon 25' in December, World's Biggest Open Innovation Model</li>
-                    <li>E-Cell member before scaling Aphrelle full-time</li>
+                    <li><strong>Youngest team leader (19)</strong> — leading BITS Pilani's team to Finals of Smart India Hackathon 25' in December, world's biggest open innovation model</li>
+                    <li><strong>Open to dropping out to build something legendary with the right founder</strong></li>
                 </ul>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section fade-in">
-            <h2 class="cta-title">Ready to Build Something Massive?</h2>
-            <p class="cta-subtitle">
-                I'm not looking for a job. I'm looking for the founder who's building the next billion-dollar company.<br>
-                While I'll eventually start my own, right now I want to pour everything I've learned into building YOUR vision.<br>
-                Let's create something that matters - Together.
+        <section class="cta fade-in">
+            <h2 class="cta-title">Your Next 10x Operator Is Here</h2>
+            <p class="cta-text">
+                I'm not looking for a job—I'm looking for a founder who's building the defining company of this decade.<br><br>
+                When I join your team, you get a builder who moves at your speed, thinks at your level, and executes with founder-level ownership. The only question is: how fast do you want to win?
             </p>
-            <a href="mailto:sohammehta.e@gmail.com" class="cta-button">
-                Let's Build Together
-            </a>
+            <a href="mailto:sohammehta.e@gmail.com" class="cta-button">Let's Build Your Legacy</a>
             
             <div class="badges">
-                <span class="badge">Building > Talking</span>
-                <span class="badge">Revenue > Vanity Metrics</span>
-                <span class="badge">Execution > Ideas</span>
+                <span class="badge">Founder Mindset</span>
+                <span class="badge">Zero to One</span>
+                <span class="badge">Execution > Everything</span>
             </div>
         </section>
     </div>
@@ -724,40 +676,31 @@
         });
 
         // Add delay to stats for staggered animation
-        document.querySelectorAll('.stat-card').forEach((card, index) => {
+        document.querySelectorAll('.stat').forEach((card, index) => {
             card.style.transitionDelay = `${index * 100}ms`;
         });
 
-        // Smooth parallax effect for header
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const header = document.querySelector('.header');
-            if (header) {
-                header.style.transform = `translateY(${scrolled * 0.1}px)`;
-            }
+        // Interactive hover effects
+        document.querySelectorAll('.exp-achievements li').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(4px)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
         });
 
-        // Add subtle tilt effect to photo
-        const photo = document.querySelector('.photo');
-        if (photo) {
-            photo.addEventListener('mousemove', (e) => {
-                const rect = photo.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 25;
-                const rotateY = (centerX - x) / 25;
-                
-                photo.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            });
-            
-            photo.addEventListener('mouseleave', () => {
-                photo.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-            });
-        }
+        // Add loaded class for smooth entrance
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Initial page load
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.8s ease';
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
     </script>
 </body>
 </html>
